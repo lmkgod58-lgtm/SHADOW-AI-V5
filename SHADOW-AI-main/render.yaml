@@ -1,0 +1,26 @@
+# Blueprint is optional. The services can also be created individually in Render.
+services:
+  - type: web
+    name: shadow-ai-memory
+    env: docker
+    dockerfilePath: ./backend2/Dockerfile
+    dockerContext: ./backend2
+    healthCheckPath: /health
+  - type: web
+    name: shadow-ai-web
+    env: docker
+    dockerfilePath: ./backend5/Dockerfile
+    dockerContext: ./backend5
+    healthCheckPath: /health
+  - type: web
+    name: shadow-ai-context
+    env: docker
+    dockerfilePath: ./backend6/Dockerfile
+    dockerContext: ./backend6
+    healthCheckPath: /health
+  - type: web
+    name: shadow-ai-jobs
+    env: docker
+    dockerfilePath: ./backend7/Dockerfile
+    dockerContext: ./backend7
+    healthCheckPath: /health
